@@ -4,6 +4,8 @@ import { ScreenComponent } from '../../components/ScreenComponent';
 import { styles } from './styles';
 import { HeaderBreath } from '../../components/HeaderBreath';
 import { ModalInfo } from '../../components/ModalInfo/ModalInfo';
+import { useThemeControl } from '../../stores/themeSetColor';
+import { themeStyles } from '../../global/styles/theme';
 
 export function Breath478() {
   const [timerStart, setTimerStart] = useState(false);
@@ -11,13 +13,14 @@ export function Breath478() {
   const [stage, setStage] = useState(1);
   const [breathe, setBreathe] = useState("");
   const [color, setColor] = useState("")
+  const { theme } = useThemeControl();
 
   useEffect(() => {
     let intervalId: NodeJS.Timeout;
 
     if (stage === 1) {
       setBreathe("Inspire por 4 segundos");
-      setColor("#FF8C00")
+      setColor("#00FF7F")
     } else if (stage === 2) {
       setBreathe("Prenda por 7 segundos");
       setColor("#B22222")
@@ -55,29 +58,41 @@ export function Breath478() {
       <HeaderBreath icon='breath_2' title='breath_2' />
 
       <View style={styles.contentInfo}>
-        <Text style={styles.text}>Inspire silenciosamente pelo nariz contando até 4.</Text>
-        <Text style={styles.text}>Prenda a respiração e conte até 7.</Text>
-        <Text style={styles.text}>Expire lentamente pela boca contando até 8.</Text>
-        <Text style={styles.text}>Use o cronômetro para auxiliar.</Text>
+        <Text style={[styles.text, {
+          color: theme.colors.textColor,
+          fontFamily: theme.fonts.textRegular
+        }]}>Inspire silenciosamente pelo nariz contando até 4.</Text>
+        <Text style={[styles.text, {
+          color: theme.colors.textColor,
+          fontFamily: theme.fonts.textRegular
+        }]}>Prenda a respiração e conte até 7.</Text>
+        <Text style={[styles.text, {
+          color: theme.colors.textColor,
+          fontFamily: theme.fonts.textRegular
+        }]}>Expire lentamente pela boca contando até 8.</Text>
+        <Text style={[styles.text, {
+          color: theme.colors.textColor,
+          fontFamily: theme.fonts.textRegular
+        }]}>Use o cronômetro para auxiliar.</Text>
       </View>
 
       <View style={[styles.boxStopWatch, { borderColor: color }]}>
-        <Text style={styles.label}>{timerStart ? breathe : "Começe o exercício"}</Text>
-        <Text style={styles.watch}>{timerStart ? seconds : "0"}</Text>
+        <Text style={[styles.label, { color: theme.colors.textColor, }]}>{timerStart ? breathe : "Começe o exercício"}</Text>
+        <Text style={[styles.watch, { color: theme.colors.textColor }]}>{timerStart ? seconds : "0"}</Text>
       </View>
 
       <View style={styles.containerButton}>
         <TouchableOpacity style={styles.play} onPress={() => setTimerStart(true)}>
-          <Text style={styles.titleButton}>INICIAR</Text>
+          <Text style={[styles.titleButton, { fontFamily: theme.fonts.textBold, color: themeStyles.light.colors.textColor }]}>INICIAR</Text>
         </TouchableOpacity>
         <TouchableOpacity style={[styles.play, styles.stop]} onPress={() => setTimerStart(false)}>
-          <Text style={styles.titleButton}>PARAR</Text>
+          <Text style={[styles.titleButton, { fontFamily: theme.fonts.textBold, color: themeStyles.light.colors.textColor }]}>PARAR</Text>
         </TouchableOpacity>
       </View>
 
 
       <ModalInfo height={600}>
-        <Text style={styles.textModal}>
+        <Text style={[styles.textModal, { color: theme.colors.textColor, }]}>
           A técnica 478 é uma técnica de respiração utilizada para reduzir o estresse e a ansiedade.
           É chamada assim porque envolve respirar por quatro segundos, prender a respiração por sete segundos e expirar por oito segundos, totalizando uma respiração completa de 15 segundos. {'\n'}
           {'\n'}

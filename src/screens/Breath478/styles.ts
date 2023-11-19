@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { theme } from '../../global/styles/theme';
+import { themeStyles } from '../../global/styles/theme';
 
 export const styles = StyleSheet.create({
   contentInfo: {
@@ -8,10 +8,8 @@ export const styles = StyleSheet.create({
     marginTop: 50
   },
   text: {
-    color: "#FFF",
     lineHeight: 30,
     fontSize: 14,
-    fontFamily: theme.fonts.textRegular
   },
   boxStopWatch: {
     marginTop: 30,
@@ -22,13 +20,11 @@ export const styles = StyleSheet.create({
     borderRadius: 10
   },
   label: {
-    color: "#FFF",
     marginTop: 20,
   },
   watch: {
     marginTop: 10,
     fontSize: 72,
-    color: "#FFF"
   },
   containerButton: {
     width: '100%',
@@ -57,14 +53,11 @@ export const styles = StyleSheet.create({
     fontSize: 16
   },
   textModal: {
-    color: "#FFF",
     lineHeight: 18,
     textAlign: 'justify',
     marginTop: 20
   },
   titleButton: {
-    fontFamily: theme.fonts.textBold,
     lineHeight: 22,
-    color: "#000"
   }
 });

@@ -1,5 +1,4 @@
 import { StyleSheet } from 'react-native';
-import { theme } from '../../global/styles/theme';
 
 export const styles = StyleSheet.create({
   header: {
@@ -8,17 +7,13 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 30
   },
   welcome: {
-    color: "#FFF",
     fontWeight: '600',
     fontSize: 32,
-    fontFamily: theme.fonts.textBold
   },
   text: {
-    color: "#FFF",
     marginTop: 40,
     textAlign: 'justify',
     lineHeight: 20,
-    fontFamily: theme.fonts.textRegular
   },
   boxCollection: {
     marginTop: 100,

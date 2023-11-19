@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { theme } from '../../global/styles/theme'
+import { themeStyles } from '../../global/styles/theme'
 export const styles = StyleSheet.create({
   header: {
     width: '100%',
@@ -21,9 +21,9 @@ export const styles = StyleSheet.create({
     height: 40
   },
   title: {
-    color: "#FFF",
     marginTop: 10,
     fontSize: 22,
-    fontFamily: theme.fonts.textBold
+    color: themeStyles.light.colors.textColor,
+    fontFamily: themeStyles.light.fonts.textBold
   },
 });

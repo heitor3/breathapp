@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { theme } from '../../global/styles/theme';
+import { themeStyles } from '../../global/styles/theme';
 
 export const styles = StyleSheet.create({
   container: {
@@ -8,32 +8,26 @@ export const styles = StyleSheet.create({
     marginTop: 50,
     paddingHorizontal: 26,
     display: 'flex',
-    fontFamily: theme.fonts.textRegular,
     textAlign: 'justify'
   },
   textInfo: {
-    color: '#FFF',
     textAlign: 'justify',
     lineHeight: 26
   },
   text: {
-    color: "#FFF",
     lineHeight: 30,
     fontSize: 14,
-    fontFamily: theme.fonts.textRegular
   },
   bold: {
-    color: "#FFF",
     lineHeight: 30,
     fontSize: 16,
-    fontFamily: theme.fonts.textBold
+    fontWeight: 'bold',
   },
   countCycles: {
     width: '100%',
     marginTop: 40,
     marginBottom: 20,
     alignItems: 'center',
-    fontFamily: theme.fonts.textRegular
   },
   buttonsCount: {
     width: '100%',
@@ -53,8 +47,6 @@ export const styles = StyleSheet.create({
     borderRadius: 10,
   },
   titleButton: {
-    fontFamily: theme.fonts.textBold,
     lineHeight: 22,
-    color: "#000"
   }
 });

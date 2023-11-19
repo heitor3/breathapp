@@ -9,18 +9,15 @@ export const styles = StyleSheet.create({
     display: 'flex',
   },
   textInfo: {
-    color: '#FFF',
     textAlign: 'justify',
     lineHeight: 26
   },
   text: {
-    color: "#FFF",
     lineHeight: 30,
     fontSize: 14,
     fontWeight: 'normal',
   },
   bold: {
-    color: "#FFF",
     lineHeight: 30,
     fontSize: 16,
     fontWeight: 'bold',

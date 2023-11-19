@@ -4,6 +4,8 @@ import { ScreenComponent } from '../../components/ScreenComponent';
 import { styles } from './styles';
 import { HeaderBreath } from '../../components/HeaderBreath';
 import { ModalInfo } from '../../components/ModalInfo/ModalInfo';
+import { useThemeControl } from '../../stores/themeSetColor';
+import { themeStyles } from '../../global/styles/theme';
 
 export function BreathSquare() {
   const [timerStart, setTimerStart] = useState(false);
@@ -55,45 +57,78 @@ export function BreathSquare() {
       clearInterval(intervalId);
     };
   }, [timerStart, stage]);
-
+  const { theme } = useThemeControl();
   return (
     <ScreenComponent>
       <HeaderBreath icon='breath_4' title='breath_4' />
 
       <View style={styles.contentInfo}>
-        <Text style={styles.text}>Inspire por 4 segundos, prenda a respiração por 4 segundos.</Text>
-        <Text style={styles.text}>Expire por 4 segundos, fique sem respirar por 4 segundos.</Text>
-        <Text style={styles.text}>Repita o ciclo.</Text>
-        <Text style={styles.text}>Use o cronômetro para auxiliar.</Text>
+        <Text style={[styles.text, {
+          fontFamily: theme.fonts.textRegular,
+          color: theme.colors.textColor
+        }]}>Inspire por 4 segundos, prenda a respiração por 4 segundos.</Text>
+        <Text style={[styles.text, {
+          fontFamily: theme.fonts.textRegular,
+          color: theme.colors.textColor
+        }]}>Expire por 4 segundos, fique sem respirar por 4 segundos.</Text>
+        <Text style={[styles.text, {
+          fontFamily: theme.fonts.textRegular,
+          color: theme.colors.textColor
+        }]}>Repita o ciclo.</Text>
+        <Text style={[styles.text, {
+          fontFamily: theme.fonts.textRegular,
+          color: theme.colors.textColor
+        }]}>Use o cronômetro para auxiliar.</Text>
       </View>
 
       <View style={[styles.boxStopWatch, { borderColor: color }]}>
-        <Text style={styles.label}>{timerStart ? breathe : "Começe o exercício"}</Text>
-        <Text style={styles.watch}>{timerStart ? seconds : "0"}</Text>
+        <Text style={[styles.label, { fontFamily: theme.fonts.textRegular, color: theme.colors.textColor }]}>{timerStart ? breathe : "Começe o exercício"}</Text>
+        <Text style={[styles.watch, {
+          color: theme.colors.textColor,
+          fontFamily: theme.fonts.textBold
+        }]}>{timerStart ? seconds : "0"}</Text>
       </View>
 
       <View style={styles.containerButton}>
         <TouchableOpacity style={styles.play} onPress={() => setTimerStart(true)}>
-          <Text style={styles.titleButton}>INICIAR</Text>
+          <Text style={[styles.titleButton, {
+            fontFamily: theme.fonts.textBold,
+            color: themeStyles.light.colors.textColor
+          }]}>INICIAR</Text>
         </TouchableOpacity>
         <TouchableOpacity style={[styles.play, styles.stop]} onPress={() => setTimerStart(false)}>
-          <Text style={styles.titleButton}>PARAR</Text>
+          <Text style={[styles.titleButton, {
+            fontFamily: theme.fonts.textBold,
+            color: themeStyles.light.colors.textColor
+          }]}>PARAR</Text>
         </TouchableOpacity>
       </View>
 
 
-      <ModalInfo height={380}>
+      <ModalInfo height={400}>
         <View style={{ marginTop: 20 }}>
-          <Text style={styles.bold}>
+          <Text style={[styles.bold, {
+            fontFamily: theme.fonts.textBold,
+            color: theme.colors.textColor
+          }]}>
             Propósito: {''}
-            <Text style={styles.text}>
+            <Text style={[styles.text, {
+              fontFamily: theme.fonts.textRegular,
+              color: theme.colors.textColor
+            }]}>
               Essa técnica é ótima para criar um ritmo respiratório calmante e promover o relaxamento.
             </Text>
           </Text>
 
-          <Text style={styles.bold}>
+          <Text style={[styles.bold, {
+            fontFamily: theme.fonts.textBold,
+            color: theme.colors.textColor
+          }]}>
             Como isso ajuda: {''}
-            <Text style={styles.text}>
+            <Text style={[styles.text, {
+              fontFamily: theme.fonts.textRegular,
+              color: theme.colors.textColor
+            }]}>
               A respiração quadrada cria uma cadência rítmica que ajuda a regular a frequência cardíaca e a diminuir a ansiedade.
               A igualdade de duração nas etapas proporciona estabilidade emocional.
             </Text>

@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import { themeStyles } from '../../global/styles/theme';
 
 export const styles = StyleSheet.create({
   container: {
@@ -11,14 +12,12 @@ export const styles = StyleSheet.create({
     height: 300,
   },
   text: {
-    color: "#FFF",
     lineHeight: 30,
     fontSize: 14,
     fontWeight: 'normal',
     textAlign: 'justify'
   },
   bold: {
-    color: "#FFF",
     lineHeight: 30,
     fontSize: 16,
     fontWeight: 'bold',

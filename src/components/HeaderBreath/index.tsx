@@ -4,6 +4,7 @@ import back from '../../assets/back.png'
 import { styles } from './styles';
 import * as breath from '../../assets/IconBreath'
 import { useNavigation } from '@react-navigation/native';
+import { useThemeControl } from '../../stores/themeSetColor';
 
 const BreathType = {
   "breath_1": breath.AnxietyIcon,
@@ -34,18 +35,23 @@ type HeaderBreathProps = {
 export function HeaderBreath({ icon, title }: HeaderBreathProps) {
   const image = BreathType[icon]
   const text = BreathName[title]
-
+  const { theme } = useThemeControl();
   const { navigate } = useNavigation();
 
   return (
     <View style={styles.header}>
       <View style={styles.back}>
-        <TouchableOpacity onPress={() => navigate("home")}>
-          <Image source={back} style={{ width: 30, height: 30 }} />
+        <TouchableOpacity
+          style={{ borderRadius: 50, padding: 4 }}
+          onPress={() => navigate("home")}>
+          <Image source={back} style={{ width: 22, height: 22, left: -3 }} />
         </TouchableOpacity>
       </View>
       <Image style={styles.logo} source={image} />
-      <Text style={styles.title}>{text}</Text>
+      <Text style={[styles.title, {
+        color: theme.colors.textColor,
+        fontFamily: theme.fonts.textBold
+      }]}>{text}</Text>
     </View>
   );
 }

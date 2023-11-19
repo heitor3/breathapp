@@ -1,5 +1,4 @@
 import { StyleSheet } from 'react-native';
-import { theme } from '../../global/styles/theme';
 
 export const styles = StyleSheet.create({
   container: {
@@ -11,19 +10,15 @@ export const styles = StyleSheet.create({
 
   },
   textInfo: {
-    color: "#FFF",
     lineHeight: 30,
     fontSize: 14,
-    fontFamily: theme.fonts.textRegular
   },
   textModal: {
-    color: "#FFF",
     lineHeight: 30,
     fontSize: 14,
     fontWeight: 'normal',
   },
   bold: {
-    color: "#FFF",
     lineHeight: 30,
     fontSize: 16,
     fontWeight: 'bold',
