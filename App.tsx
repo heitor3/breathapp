@@ -16,7 +16,6 @@ export default function App() {
     const getTheme = async () => {
       try {
         const storedTheme = await AsyncStorage.getItem('theme');
-        console.log('Stored Theme:', storedTheme);
 
         if (storedTheme === 'dark') {
           toggleTheme('dark');
