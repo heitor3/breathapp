@@ -17,7 +17,6 @@ export function Home() {
   const handleToggleTheme = async () => {
     try {
       const currentTheme = await AsyncStorage.getItem('theme');
-
       toggleTheme(currentTheme === 'dark' ? 'light' : 'dark');
       await AsyncStorage.setItem('theme', currentTheme === 'dark' ? 'light' : 'dark');
     } catch (error) {
