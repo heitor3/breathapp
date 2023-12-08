@@ -16,7 +16,7 @@ export type ThemeStyleName = 'light' | 'dark';
 export interface ThemeStyle {
   colors: ThemeColors;
   fonts: ThemeFonts;
-  bar: ThemeStyleName; // Alteração aqui
+  bar: ThemeStyleName;
 }
 
 export interface ThemeStyles {
