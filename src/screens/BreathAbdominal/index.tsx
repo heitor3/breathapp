@@ -35,7 +35,7 @@ export function BreathAbdominal() {
         }]}>Concentre-se na expansão e contração do abdômen.</Text>
       </View>
 
-      <ModalInfo height={500}>
+      <ModalInfo >
         <View style={{ marginTop: 20 }}>
           <Text style={[styles.bold, { color: theme.colors.textColor, fontFamily: theme.fonts.textBold }]}>
             Propósito: {''}

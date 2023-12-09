@@ -105,7 +105,7 @@ export function BreathSquare() {
       </View>
 
 
-      <ModalInfo height={400}>
+      <ModalInfo >
         <View style={{ marginTop: 20 }}>
           <Text style={[styles.bold, {
             fontFamily: theme.fonts.textBold,

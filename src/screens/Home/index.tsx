@@ -59,7 +59,7 @@ export function Home() {
         </View>
       </View>
 
-      <ModalInfo height={400}>
+      <ModalInfo >
         <View style={{ marginTop: 20, paddingHorizontal: 10 }}>
           <Text style={{ fontFamily: theme.fonts.textRegular, color: theme.colors.textColor, lineHeight: 26, textAlign: 'justify' }}>
             Lembre-se de que a prática regular dessas técnicas pode ajudar a melhorar sua capacidade de gerenciar a ansiedade.

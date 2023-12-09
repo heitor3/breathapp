@@ -13,7 +13,7 @@ export function BreathDeep() {
     <ScreenComponent>
       <HeaderBreath icon='breath_5' title='breath_5' />
       <View style={styles.container}>
-        <ScrollView style={{ height: '100%', paddingHorizontal: 10, backgroundColor: "rgba(0,0,0,0.2)" }}>
+        <ScrollView showsVerticalScrollIndicator style={{ height: '100%', paddingHorizontal: 10, backgroundColor: "rgba(0,0,0,0.2)" }}>
           <Text style={[styles.textInfo, {
             color: theme.colors.textColor,
             fontFamily: theme.fonts.textRegular
@@ -49,7 +49,7 @@ export function BreathDeep() {
         </ScrollView>
       </View>
 
-      <ModalInfo height={400}>
+      <ModalInfo >
         <View style={{ marginTop: 20 }}>
           <Text style={[styles.bold, { fontFamily: theme.fonts.textBold, color: theme.colors.textColor }]}>
             Propósito: {''}

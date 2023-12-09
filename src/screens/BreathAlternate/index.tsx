@@ -15,7 +15,7 @@ export function BreathAlternate() {
     <ScreenComponent>
       <HeaderBreath icon='breath_6' title='breath_6' />
       <View style={styles.container}>
-        <ScrollView style={{ height: '100%', paddingHorizontal: 10, backgroundColor: "rgba(0,0,0,0.2)" }}>
+        <ScrollView showsVerticalScrollIndicator style={{ height: '100%', paddingHorizontal: 10, backgroundColor: "rgba(0,0,0,0.2)" }}>
           <Text style={[styles.textInfo, { color: theme.colors.textColor, fontFamily: theme.fonts.textRegular }]}>Sente-se em uma posição confortável com a coluna reta. Você pode estar em uma cadeira,
             no chão ou em uma postura de meditação, como a postura de lótus.</Text>
           <Text style={[styles.textInfo, { color: theme.colors.textColor, fontFamily: theme.fonts.textRegular }]}>Feche uma narina com o polegar e inspire lentamente pela outra narina.</Text>
@@ -50,7 +50,7 @@ export function BreathAlternate() {
       </View>
 
 
-      <ModalInfo height={400}>
+      <ModalInfo >
         <View style={{ marginTop: 20 }}>
           <Text style={[styles.bold, {
             color: theme.colors.textColor,

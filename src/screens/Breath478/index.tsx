@@ -91,7 +91,7 @@ export function Breath478() {
       </View>
 
 
-      <ModalInfo height={600}>
+      <ModalInfo>
         <Text style={[styles.textModal, { color: theme.colors.textColor, }]}>
           A técnica 478 é uma técnica de respiração utilizada para reduzir o estresse e a ansiedade.
           É chamada assim porque envolve respirar por quatro segundos, prender a respiração por sete segundos e expirar por oito segundos, totalizando uma respiração completa de 15 segundos. {'\n'}

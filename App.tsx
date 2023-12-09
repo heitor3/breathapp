@@ -15,8 +15,13 @@ export default function App() {
   const { theme, toggleTheme } = useThemeControl();
 
   useEffect(() => {
+    const splashScreenTime = 3000
+
     if (Platform.OS === 'android') {
-      SplashScreen.hide();
+      setTimeout(function () {
+        SplashScreen.hide();
+      }, splashScreenTime);
+
     }
 
     const getTheme = async () => {
