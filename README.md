@@ -38,11 +38,11 @@ npm start
 <br/>
 
 <div style="display: flex; justify-content: space-between;">
-   <img src="./public/breath.jpeg" alt="Breathing Guides" height="600" />
-   <img src="./public/counter.jpeg" alt="Counter" height="600" />
-   <img src="./public/timer.jpeg" alt="Timer" height="600" />
-   <img src="./public/light.jpeg" alt="Light" height="600" />
-   <img src="./public/dark.jpeg" alt="Dark" height="600" />
+   <img src="./public/breath.jpeg" alt="Breathing Guides" height="400" />
+   <img src="./public/counter.jpeg" alt="Counter" height="400" />
+   <img src="./public/timer.jpeg" alt="Timer" height="400" />
+   <img src="./public/light.jpeg" alt="Light" height="400" />
+   <img src="./public/dark.jpeg" alt="Dark" height="400" />
 </div>
 
 ## Contributing
