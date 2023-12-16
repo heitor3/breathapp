@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
+import React, { useCallback, useState } from 'react';
 import { TouchableOpacity, Text, View, Image } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, useFocusEffect } from '@react-navigation/native';
 import { styles } from './styles';
 import { ButtonIcon } from '../../components/ButtonIcon';
 import { ModalInfo } from '../../components/ModalInfo/ModalInfo';
@@ -13,6 +13,18 @@ import Sun from '../../assets/sun.png'
 export function Home() {
   const { navigate } = useNavigation();
   const { theme, toggleTheme } = useThemeControl();
+  const [homeFocus, setHomeFocus] = useState(false)
+
+
+  useFocusEffect(
+    useCallback(() => {
+      setHomeFocus(true);
+      return () => {
+        setHomeFocus(false);
+      }
+    }, [])
+  )
+
 
   const handleToggleTheme = async () => {
     try {
@@ -59,7 +71,7 @@ export function Home() {
         </View>
       </View>
 
-      <ModalInfo >
+      {homeFocus && <ModalInfo >
         <View style={{ marginTop: 20, paddingHorizontal: 10 }}>
           <Text style={{ fontFamily: theme.fonts.textRegular, color: theme.colors.textColor, lineHeight: 26, textAlign: 'justify' }}>
             Lembre-se de que a prática regular dessas técnicas pode ajudar a melhorar sua capacidade de gerenciar a ansiedade.
@@ -70,7 +82,7 @@ export function Home() {
             </Text>
           </Text>
         </View>
-      </ModalInfo>
+      </ModalInfo>}
     </ScreenComponent>
   );
 }
