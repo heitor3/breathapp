@@ -24,7 +24,7 @@ export const styles = StyleSheet.create({
   },
   countCycles: {
     width: '100%',
-    marginTop: 10,
+    marginTop: 30,
     marginBottom: 20,
     alignItems: 'center',
   },
