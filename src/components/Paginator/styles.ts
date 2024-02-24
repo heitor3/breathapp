@@ -4,7 +4,7 @@ export const styles = StyleSheet.create({
   container: {
     marginTop: 20,
     flexDirection: 'row',
-    height: 60,
+    height: 20,
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',

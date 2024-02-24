@@ -24,7 +24,7 @@ export function Paginator({ steps, scrollX }: StepsComponentProps) {
 
           const dotWidth = scrollX.interpolate({
             inputRange,
-            outputRange: [10, 16, 10],
+            outputRange: [10, 14, 10],
             extrapolate: "clamp",
           })
 
