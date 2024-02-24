@@ -3,12 +3,11 @@ import { themeStyles } from '../../global/styles/theme';
 
 export const styles = StyleSheet.create({
   container: {
-    width: '100%',
-    height: 220,
+    width: '90%',
     marginTop: 50,
-    paddingHorizontal: 26,
+    paddingHorizontal: 10,
     display: 'flex',
-    textAlign: 'justify'
+    alignItems: 'center'
   },
   textInfo: {
     textAlign: 'justify',
@@ -25,7 +24,7 @@ export const styles = StyleSheet.create({
   },
   countCycles: {
     width: '100%',
-    marginTop: 40,
+    marginTop: 10,
     marginBottom: 20,
     alignItems: 'center',
   },
@@ -35,7 +34,7 @@ export const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-evenly',
-    marginTop: 60
+    marginTop: 20
   },
   button: {
     backgroundColor: "#00FF7F",
