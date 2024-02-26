@@ -40,7 +40,7 @@ const themeStyles: ThemeStyles = {
   },
   dark: {
     colors: {
-      primaryColor: "#181818",
+      primaryColor: "#111111",
       textColor: "#FFFFFF",
       statusBarColor: "light"
     },
