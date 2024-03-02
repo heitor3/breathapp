@@ -23,13 +23,12 @@ export const styles = StyleSheet.create({
     marginTop: 20,
   },
   watch: {
-    marginTop: 10,
     fontSize: 72,
   },
   containerButton: {
     width: '100%',
     paddingHorizontal: 30,
-    marginTop: 20,
+    marginTop: 40,
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',

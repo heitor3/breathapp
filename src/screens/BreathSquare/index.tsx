@@ -51,6 +51,9 @@ export function BreathSquare() {
           }
         });
       }, 1000);
+    } else {
+      setSeconds(0)
+      setStage(1)
     }
 
     return () => {
