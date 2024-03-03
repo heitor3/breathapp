@@ -18,24 +18,22 @@ export const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   boxStopWatch: {
-    marginTop: 30,
+    display: 'flex',
     width: '90%',
     height: 200,
     alignItems: 'center',
-    borderWidth: 2,
-    borderRadius: 10
+    justifyContent: 'center'
   },
   label: {
     marginTop: 20
   },
   watch: {
-    marginTop: 10,
     fontSize: 72
   },
   containerButton: {
     width: '100%',
     paddingHorizontal: 30,
-    marginTop: 20,
+    marginTop: 10,
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',

@@ -6,13 +6,15 @@ import { HeaderBreath } from '../../components/HeaderBreath';
 import { ModalInfo } from '../../components/ModalInfo/ModalInfo';
 import { useThemeControl } from '../../stores/themeSetColor';
 import { themeStyles } from '../../global/styles/theme';
+import { TimerCircleAnimated } from '../../components/TimerCircleAnimated';
 
 export function BreathSquare() {
+  const { theme } = useThemeControl();
   const [timerStart, setTimerStart] = useState(false);
   const [seconds, setSeconds] = useState(0);
   const [stage, setStage] = useState(1);
   const [breathe, setBreathe] = useState("");
-  const [color, setColor] = useState("")
+  const [color, setColor] = useState(theme.colors.primaryColor)
 
   useEffect(() => {
     let intervalId: NodeJS.Timeout;
@@ -51,13 +53,17 @@ export function BreathSquare() {
           }
         });
       }, 1000);
+    } else {
+      setColor(theme.colors.primaryColor)
+      setSeconds(0)
+      setStage(1)
+      setBreathe("")
     }
 
     return () => {
       clearInterval(intervalId);
     };
   }, [timerStart, stage]);
-  const { theme } = useThemeControl();
   return (
     <ScreenComponent>
       <HeaderBreath icon='breath_4' title='breath_4' />
@@ -81,12 +87,12 @@ export function BreathSquare() {
         }]}>Use o cronômetro para auxiliar.</Text>
       </View>
 
+      <Text style={[styles.label, { fontFamily: theme.fonts.textRegular, color: theme.colors.textColor }]}>{timerStart ? breathe : "Começe o exercício"}</Text>
       <View style={[styles.boxStopWatch, { borderColor: color }]}>
-        <Text style={[styles.label, { fontFamily: theme.fonts.textRegular, color: theme.colors.textColor }]}>{timerStart ? breathe : "Começe o exercício"}</Text>
-        <Text style={[styles.watch, {
-          color: theme.colors.textColor,
-          fontFamily: theme.fonts.textBold
-        }]}>{timerStart ? seconds : "0"}</Text>
+        <Text style={[styles.watch, { color: theme.colors.textColor, fontFamily: theme.fonts.textBold }]}>{timerStart ? seconds : "0"}</Text>
+        <View style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'absolute' }}>
+          <TimerCircleAnimated color={color} colorTop={theme.colors.primaryColor} spinInit={timerStart} />
+        </View>
       </View>
 
       <View style={styles.containerButton}>

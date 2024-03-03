@@ -6,14 +6,15 @@ import { HeaderBreath } from '../../components/HeaderBreath';
 import { ModalInfo } from '../../components/ModalInfo/ModalInfo';
 import { useThemeControl } from '../../stores/themeSetColor';
 import { themeStyles } from '../../global/styles/theme';
+import { TimerCircleAnimated } from '../../components/TimerCircleAnimated';
 
 export function Breath478() {
+  const { theme } = useThemeControl();
   const [timerStart, setTimerStart] = useState(false);
   const [seconds, setSeconds] = useState(0);
   const [stage, setStage] = useState(1);
   const [breathe, setBreathe] = useState("");
-  const [color, setColor] = useState("")
-  const { theme } = useThemeControl();
+  const [color, setColor] = useState(theme.colors.primaryColor)
 
   useEffect(() => {
     let intervalId: NodeJS.Timeout;
@@ -46,6 +47,11 @@ export function Breath478() {
           }
         });
       }, 1000);
+    } else {
+      setColor(theme.colors.primaryColor)
+      setBreathe("")
+      setStage(1)
+      setSeconds(0)
     }
 
     return () => {
@@ -76,9 +82,12 @@ export function Breath478() {
         }]}>Use o cronômetro para auxiliar.</Text>
       </View>
 
-      <View style={[styles.boxStopWatch, { borderColor: color }]}>
-        <Text style={[styles.label, { color: theme.colors.textColor, }]}>{timerStart ? breathe : "Começe o exercício"}</Text>
+      <Text style={[styles.label, { color: theme.colors.textColor, }]}>{timerStart ? breathe : "Começe o exercício"}</Text>
+      <View style={styles.boxStopWatch}>
         <Text style={[styles.watch, { color: theme.colors.textColor }]}>{timerStart ? seconds : "0"}</Text>
+        <View style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'absolute' }}>
+          <TimerCircleAnimated color={color} colorTop={theme.colors.primaryColor} spinInit={timerStart} />
+        </View>
       </View>
 
       <View style={styles.containerButton}>

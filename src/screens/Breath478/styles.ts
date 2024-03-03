@@ -1,5 +1,4 @@
 import { StyleSheet } from 'react-native';
-import { themeStyles } from '../../global/styles/theme';
 
 export const styles = StyleSheet.create({
   contentInfo: {
@@ -12,18 +11,16 @@ export const styles = StyleSheet.create({
     fontSize: 14,
   },
   boxStopWatch: {
-    marginTop: 30,
+    display: 'flex',
     width: '90%',
     height: 200,
     alignItems: 'center',
-    borderWidth: 2,
-    borderRadius: 10
+    justifyContent: 'center'
   },
   label: {
-    marginTop: 20,
+    marginTop: 30,
   },
   watch: {
-    marginTop: 10,
     fontSize: 72,
   },
   containerButton: {
