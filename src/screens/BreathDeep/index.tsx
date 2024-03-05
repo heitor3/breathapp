@@ -8,10 +8,12 @@ import { ModalInfo } from '../../components/ModalInfo/ModalInfo';
 import { useThemeControl } from '../../stores/themeSetColor';
 import { Carousel } from '../../components/Carousel';
 import { Steps } from './steps';
+import { useTranslation } from 'react-i18next';
 
 
 export function BreathDeep() {
   const { theme } = useThemeControl();
+  const { t } = useTranslation();
   return (
     <ScreenComponent>
       <HeaderBreath icon='breath_5' title='breath_5' />

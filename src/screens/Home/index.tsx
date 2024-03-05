@@ -9,8 +9,11 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useThemeControl } from '../../stores/themeSetColor';
 import Moon from '../../assets/moon.png'
 import Sun from '../../assets/sun.png'
+import '../../utils/i18n';
+import { useTranslation } from 'react-i18next';
 
 export function Home() {
+  const { t, i18n } = useTranslation();
   const { navigate } = useNavigation();
   const { theme, toggleTheme } = useThemeControl();
   const [homeFocus, setHomeFocus] = useState(false)
@@ -19,12 +22,16 @@ export function Home() {
   useFocusEffect(
     useCallback(() => {
       setHomeFocus(true);
+
+      i18n.changeLanguage('en').then(() => {
+
+      })
+
       return () => {
         setHomeFocus(false);
       }
     }, [])
   )
-
 
   const handleToggleTheme = async () => {
     try {
@@ -35,6 +42,13 @@ export function Home() {
       console.error('Error toggling theme:', error);
     }
   };
+
+  const handleToggleLanguageText = (value: string) => {
+    console.log(value)
+    i18n.changeLanguage(value).then(() => {
+
+    })
+  }
 
   return (
     <ScreenComponent>
@@ -48,37 +62,35 @@ export function Home() {
           color: theme.colors.textColor,
           fontFamily: theme.fonts.textBold,
         }]}>
-          Bem Vindo(a)!
+          {t("wellcome")}
         </Text>
         <Text style={[styles.text, {
           color: theme.colors.textColor,
           fontFamily: theme.fonts.textRegular
         }]}>
-          Selecione um exercício para reduzir a ansiedade e manter a calma.
+          {t('select')}
         </Text>
       </View>
 
       <View style={styles.boxCollection}>
         <View style={styles.boxConente}>
-          <ButtonIcon icon='breath_1' title="Respiração consciente" onPress={() => navigate('breathConscious')} />
-          <ButtonIcon icon='breath_2' title="Respiração 4-7-8" onPress={() => navigate('breath478')} />
-          <ButtonIcon icon='breath_3' title="Respiração abdominal" onPress={() => navigate('breathAbdominal')} />
+          <ButtonIcon icon='breath_1' title={t("title_breath_1")} onPress={() => navigate('breathConscious')} />
+          <ButtonIcon icon='breath_2' title={t("title_breath_1")} onPress={() => navigate('breath478')} />
+          <ButtonIcon icon='breath_3' title={t("title_breath_1")} onPress={() => navigate('breathAbdominal')} />
         </View>
         <View style={styles.boxConente}>
-          <ButtonIcon icon='breath_4' title="Respiração quadrada" onPress={() => navigate('breathSquare')} />
-          <ButtonIcon icon='breath_5' title="Respiração profunda completa" onPress={() => navigate('breathDeep')} />
-          <ButtonIcon icon='breath_6' title="Respiração alternada de narinas" onPress={() => navigate('breathAlternate')} />
+          <ButtonIcon icon='breath_4' title={t("title_breath_1")} onPress={() => navigate('breathSquare')} />
+          <ButtonIcon icon='breath_5' title={t("title_breath_1")} onPress={() => navigate('breathDeep')} />
+          <ButtonIcon icon='breath_6' title={t("title_breath_1")} onPress={() => navigate('breathAlternate')} />
         </View>
       </View>
 
       {homeFocus && <ModalInfo >
         <View style={{ marginTop: 20, paddingHorizontal: 10 }}>
           <Text style={{ fontFamily: theme.fonts.textRegular, color: theme.colors.textColor, lineHeight: 26, textAlign: 'justify' }}>
-            Lembre-se de que a prática regular dessas técnicas pode ajudar a melhorar sua capacidade de gerenciar a ansiedade.
-            Experimente diferentes técnicas para encontrar a que funciona melhor para você. {''}
+            {t('info_home')} {'\n'}
             <Text style={{ fontFamily: theme.fonts.textBold, fontWeight: "bold", fontStyle: 'italic', fontSize: 16 }}>
-              Além disso, se você tiver ansiedade persistente ou grave, é aconselhável procurar a orientação de um
-              profissional de saúde mental para obter suporte adequado. ♥️
+              {t('info_home_2')}
             </Text>
           </Text>
         </View>

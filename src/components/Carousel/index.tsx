@@ -3,6 +3,7 @@ import { FlatList, Text, View, Animated, ViewToken } from 'react-native';
 import { styles } from './styles'
 import { useThemeControl } from '../../stores/themeSetColor';
 import { Paginator } from '../Paginator';
+import { useTranslation } from 'react-i18next';
 
 interface Step {
   id: string;
@@ -15,6 +16,7 @@ interface StepsComponentProps {
 
 export function Carousel({ steps }: StepsComponentProps) {
   const { theme } = useThemeControl();
+  const { t } = useTranslation();
   const [currentIndex, setCurrentIndex] = useState<number>(0)
 
   const scrollX = useRef(new Animated.Value(0)).current;

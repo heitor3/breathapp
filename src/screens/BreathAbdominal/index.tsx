@@ -6,9 +6,11 @@ import { HeaderBreath } from '../../components/HeaderBreath';
 import { ScreenComponent } from '../../components/ScreenComponent';
 import { ModalInfo } from '../../components/ModalInfo/ModalInfo';
 import { useThemeControl } from '../../stores/themeSetColor';
+import { useTranslation } from 'react-i18next';
 
 export function BreathAbdominal() {
   const { theme } = useThemeControl();
+  const { t } = useTranslation();
   return (
     <ScreenComponent>
       <HeaderBreath icon='breath_3' title='breath_3' />
@@ -16,39 +18,38 @@ export function BreathAbdominal() {
         <Text style={[styles.textInfo, {
           color: theme.colors.textColor,
           fontFamily: theme.fonts.textRegular
-        }]}>Sente-se ou deite-se confortavelmente.</Text>
+        }]}>{t('screen_abdominal_1')}</Text>
         <Text style={[styles.textInfo, {
           color: theme.colors.textColor,
           fontFamily: theme.fonts.textRegular
-        }]}>Coloque uma mão no peito e a outra no abdômen.</Text>
+        }]}>{t('screen_abdominal_2')}</Text>
         <Text style={[styles.textInfo, {
           color: theme.colors.textColor,
           fontFamily: theme.fonts.textRegular
-        }]}>Respire profundamente pelo nariz, enchendo o abdômen com ar.</Text>
+        }]}>{t('screen_abdominal_3')}</Text>
         <Text style={[styles.textInfo, {
           color: theme.colors.textColor,
           fontFamily: theme.fonts.textRegular
-        }]}>Expire lentamente pela boca, esvaziando o ar dos pulmões.</Text>
+        }]}>{t('screen_abdominal_14')}</Text>
         <Text style={[styles.textInfo, {
           color: theme.colors.textColor,
           fontFamily: theme.fonts.textRegular
-        }]}>Concentre-se na expansão e contração do abdômen.</Text>
+        }]}>{t('screen_abdominal_5')}</Text>
       </View>
 
       <ModalInfo >
         <View style={{ marginTop: 20 }}>
           <Text style={[styles.bold, { color: theme.colors.textColor, fontFamily: theme.fonts.textBold }]}>
-            Propósito: {''}
+            {t('info_abdominal_1')} {''}
             <Text style={[styles.textModal, { color: theme.colors.textColor, fontFamily: theme.fonts.textRegular }]}>
-              Essa técnica incentiva a respiração profunda e lenta, o que ajuda a reduzir os sintomas de ansiedade, como batimentos cardíacos acelerados e tensão muscular.
+              {t('info_abdominal_2')}
             </Text>
           </Text>
 
           <Text style={[styles.bold, { color: theme.colors.textColor, fontFamily: theme.fonts.textBold }]}>
-            Como isso ajuda: {''}
+            {t('info_abdominal_3')} {''}
             <Text style={[styles.textModal, { color: theme.colors.textColor, fontFamily: theme.fonts.textRegular }]}>
-              A respiração abdominal ativa o sistema nervoso parassimpático, que é responsável pelo relaxamento e pela redução do estresse. Ela ajuda a oxigenar o corpo de maneira
-              mais eficaz e a diminuir a resposta do sistema nervoso simpático, que está associado à resposta de luta ou fuga.
+              {t('info_abdominal_4')}
             </Text>
           </Text>
 
