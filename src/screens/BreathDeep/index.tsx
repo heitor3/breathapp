@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, ScrollView } from 'react-native';
+import { View, Text } from 'react-native';
 
 import { styles } from './styles';
 import { ScreenComponent } from '../../components/ScreenComponent';
@@ -24,16 +24,16 @@ export function BreathDeep() {
       <ModalInfo >
         <View style={{ marginTop: 20 }}>
           <Text style={[styles.bold, { fontFamily: theme.fonts.textBold, color: theme.colors.textColor }]}>
-            Propósito: {''}
+            {t('info_deep_1')} {''}
             <Text style={[styles.text, { fontFamily: theme.fonts.textRegular, color: theme.colors.textColor }]}>
-              Essa técnica promove a oxigenação completa do corpo e ajuda a liberar a tensão.
+              {t('info_deep_2')}
             </Text>
           </Text>
 
           <Text style={[styles.bold, { fontFamily: theme.fonts.textBold, color: theme.colors.textColor }]}>
-            Como isso ajuda: {''}
+            {t('info_deep_3')} {''}
             <Text style={[styles.text, { fontFamily: theme.fonts.textRegular, color: theme.colors.textColor }]}>
-              A respiração profunda completa fornece uma sensação de relaxamento e alívio. Ela ajuda a reduzir a hiperventilação associada à ansiedade.
+              {t('info_deep_4')}
             </Text>
           </Text>
 

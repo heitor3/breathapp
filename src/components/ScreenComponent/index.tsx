@@ -14,7 +14,7 @@ export function ScreenComponent({ children, ...rest }: ScreenPorps) {
   const { theme } = useThemeControl();
   const { controlHomeModal, setControlHomeModal } = useModalHomeControl();
   return (
-    <View style={[styles.container, { backgroundColor: theme.colors.primaryColor }]}  >
+    <View style={[styles.container, { backgroundColor: theme.colors.primaryColor }]}  {...rest} >
       <View style={[styles.children, { backgroundColor: theme.colors.primaryColor }]}>
         {children}
       </View>

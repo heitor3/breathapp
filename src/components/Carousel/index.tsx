@@ -46,13 +46,13 @@ export function Carousel({ steps }: StepsComponentProps) {
           renderItem={({ item }) => (
             <View style={[styles.item, { backgroundColor: theme.colors.primaryColor }]}>
               <View style={styles.header}>
-                <Text style={[styles.title, { color: theme.colors.textColor, fontFamily: theme.fonts.textMedium }]}>{item.id}</Text>
+                <Text style={[styles.title, { color: theme.colors.textColor, fontFamily: theme.fonts.textMedium }]}>{t(item.id)}</Text>
               </View>
               {item.steps.map((step, index) => (
                 <Text key={Math.random()} style={[styles.steps, {
                   color: theme.colors.textColor,
                   fontFamily: theme.fonts.textRegular
-                }]}>{step}</Text>
+                }]}>{t(step)}</Text>
               ))}
             </View>
           )}

@@ -6,6 +6,9 @@ import { Routes } from './src/routes';
 import { ThemeStyle } from './src/global/styles/theme';
 import SplashScreen from 'react-native-splash-screen'
 import { Platform } from 'react-native';
+import useTranslateControl from './src/stores/translateControl';
+import { useTranslation } from 'react-i18next';
+import './src/utils/i18n';
 
 const getStatusBarStyle = (barStyle: ThemeStyle['bar']): 'light' | 'dark' => {
   return barStyle === 'dark' ? 'light' : 'dark';
@@ -13,6 +16,8 @@ const getStatusBarStyle = (barStyle: ThemeStyle['bar']): 'light' | 'dark' => {
 
 export default function App() {
   const { theme, toggleTheme } = useThemeControl();
+  const { setTranslate } = useTranslateControl();
+  const { i18n } = useTranslation();
 
   useEffect(() => {
     const splashScreenTime = 3000
@@ -38,6 +43,22 @@ export default function App() {
       }
     };
 
+    const getTrasnlation = async () => {
+      try {
+        const newtranslate = await AsyncStorage.getItem('translate');
+        if (newtranslate) {
+          setTranslate(newtranslate)
+        }
+        i18n.changeLanguage(newtranslate!).then(() => {
+
+        })
+
+      } catch (error) {
+        console.error('Error reading translate from AsyncStorage:', error);
+      }
+    }
+
+    getTrasnlation();
     getTheme();
   }, [toggleTheme]);
 

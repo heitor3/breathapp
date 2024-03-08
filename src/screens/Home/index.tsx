@@ -11,22 +11,19 @@ import Moon from '../../assets/moon.png'
 import Sun from '../../assets/sun.png'
 import '../../utils/i18n';
 import { useTranslation } from 'react-i18next';
+import { flags } from '../../assets/flags';
+import Dropdown from '../../components/DropDown';
 
 export function Home() {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const { navigate } = useNavigation();
   const { theme, toggleTheme } = useThemeControl();
   const [homeFocus, setHomeFocus] = useState(false)
-
+  const [teste, setTeste] = useState(false)
 
   useFocusEffect(
     useCallback(() => {
       setHomeFocus(true);
-
-      i18n.changeLanguage('en').then(() => {
-
-      })
-
       return () => {
         setHomeFocus(false);
       }
@@ -43,16 +40,11 @@ export function Home() {
     }
   };
 
-  const handleToggleLanguageText = (value: string) => {
-    console.log(value)
-    i18n.changeLanguage(value).then(() => {
-
-    })
-  }
 
   return (
     <ScreenComponent>
-      <View style={{ width: '100%', marginTop: -60, marginBottom: 50, display: 'flex', flexDirection: 'row', justifyContent: 'flex-end', paddingHorizontal: 30 }}>
+      <View style={{ width: '100%', marginTop: -60, marginBottom: 50, display: 'flex', flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 30 }}>
+        <Dropdown options={flags} />
         <TouchableOpacity onPress={handleToggleTheme} style={{ borderRadius: 50, padding: 2 }}>
           {theme.bar === "dark" ? (<Image source={Sun} style={{ width: 26, height: 26 }} />) : (<Image source={Moon} style={{ width: 26, height: 26 }} />)}
         </TouchableOpacity>
