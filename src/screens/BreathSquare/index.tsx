@@ -7,9 +7,11 @@ import { ModalInfo } from '../../components/ModalInfo/ModalInfo';
 import { useThemeControl } from '../../stores/themeSetColor';
 import { themeStyles } from '../../global/styles/theme';
 import { TimerCircleAnimated } from '../../components/TimerCircleAnimated';
+import { useTranslation } from 'react-i18next';
 
 export function BreathSquare() {
   const { theme } = useThemeControl();
+  const { t } = useTranslation();
   const [timerStart, setTimerStart] = useState(false);
   const [seconds, setSeconds] = useState(0);
   const [stage, setStage] = useState(1);
@@ -20,16 +22,16 @@ export function BreathSquare() {
     let intervalId: NodeJS.Timeout;
 
     if (stage === 1) {
-      setBreathe("Inspire por 4 segundos");
+      setBreathe("screen_square_6");
       setColor("#00FF7F")
     } else if (stage === 2) {
-      setBreathe("Prenda por 4 segundos");
+      setBreathe("screen_square_7");
       setColor("#B22222")
     } else if (stage === 3) {
-      setBreathe("Expire por 4 segundos");
+      setBreathe("screen_square_8");
       setColor("#00FF7F")
     } else {
-      setBreathe("Prenda por 4 segundos");
+      setBreathe("screen_square_9");
       setColor("#B22222")
     }
 
@@ -72,22 +74,22 @@ export function BreathSquare() {
         <Text style={[styles.text, {
           fontFamily: theme.fonts.textRegular,
           color: theme.colors.textColor
-        }]}>Inspire por 4 segundos, prenda a respiração por 4 segundos.</Text>
+        }]}>{t('screen_square_1')}</Text>
         <Text style={[styles.text, {
           fontFamily: theme.fonts.textRegular,
           color: theme.colors.textColor
-        }]}>Expire por 4 segundos, fique sem respirar por 4 segundos.</Text>
+        }]}>{t('screen_square_2')}</Text>
         <Text style={[styles.text, {
           fontFamily: theme.fonts.textRegular,
           color: theme.colors.textColor
-        }]}>Repita o ciclo.</Text>
+        }]}>{t('screen_square_3')}</Text>
         <Text style={[styles.text, {
           fontFamily: theme.fonts.textRegular,
           color: theme.colors.textColor
-        }]}>Use o cronômetro para auxiliar.</Text>
+        }]}>{t('screen_square_4')}</Text>
       </View>
 
-      <Text style={[styles.label, { fontFamily: theme.fonts.textRegular, color: theme.colors.textColor }]}>{timerStart ? breathe : "Começe o exercício"}</Text>
+      <Text style={[styles.label, { fontFamily: theme.fonts.textRegular, color: theme.colors.textColor }]}>{timerStart ? `${t(breathe)}` : `${t('screen_square_5')}`}</Text>
       <View style={[styles.boxStopWatch, { borderColor: color }]}>
         <Text style={[styles.watch, { color: theme.colors.textColor, fontFamily: theme.fonts.textBold }]}>{timerStart ? seconds : "0"}</Text>
         <View style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'absolute' }}>
@@ -100,13 +102,13 @@ export function BreathSquare() {
           <Text style={[styles.titleButton, {
             fontFamily: theme.fonts.textBold,
             color: themeStyles.light.colors.textColor
-          }]}>INICIAR</Text>
+          }]}>{t('screen_square_Start')}</Text>
         </TouchableOpacity>
         <TouchableOpacity style={[styles.play, styles.stop]} onPress={() => setTimerStart(false)}>
           <Text style={[styles.titleButton, {
             fontFamily: theme.fonts.textBold,
             color: themeStyles.light.colors.textColor
-          }]}>PARAR</Text>
+          }]}>{t('screen_square_Stop')}</Text>
         </TouchableOpacity>
       </View>
 
@@ -117,12 +119,12 @@ export function BreathSquare() {
             fontFamily: theme.fonts.textBold,
             color: theme.colors.textColor
           }]}>
-            Propósito: {''}
+            {t('info_square_1')} {''}
             <Text style={[styles.text, {
               fontFamily: theme.fonts.textRegular,
               color: theme.colors.textColor
             }]}>
-              Essa técnica é ótima para criar um ritmo respiratório calmante e promover o relaxamento.
+              {t('info_square_2')}
             </Text>
           </Text>
 
@@ -130,13 +132,12 @@ export function BreathSquare() {
             fontFamily: theme.fonts.textBold,
             color: theme.colors.textColor
           }]}>
-            Como isso ajuda: {''}
+            {t('info_square_3')} {''}
             <Text style={[styles.text, {
               fontFamily: theme.fonts.textRegular,
               color: theme.colors.textColor
             }]}>
-              A respiração quadrada cria uma cadência rítmica que ajuda a regular a frequência cardíaca e a diminuir a ansiedade.
-              A igualdade de duração nas etapas proporciona estabilidade emocional.
+              {t('info_square_4')}
             </Text>
           </Text>
 

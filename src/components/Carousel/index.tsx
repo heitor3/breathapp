@@ -3,6 +3,7 @@ import { FlatList, Text, View, Animated, ViewToken } from 'react-native';
 import { styles } from './styles'
 import { useThemeControl } from '../../stores/themeSetColor';
 import { Paginator } from '../Paginator';
+import { useTranslation } from 'react-i18next';
 
 interface Step {
   id: string;
@@ -15,6 +16,7 @@ interface StepsComponentProps {
 
 export function Carousel({ steps }: StepsComponentProps) {
   const { theme } = useThemeControl();
+  const { t } = useTranslation();
   const [currentIndex, setCurrentIndex] = useState<number>(0)
 
   const scrollX = useRef(new Animated.Value(0)).current;
@@ -44,13 +46,13 @@ export function Carousel({ steps }: StepsComponentProps) {
           renderItem={({ item }) => (
             <View style={[styles.item, { backgroundColor: theme.colors.primaryColor }]}>
               <View style={styles.header}>
-                <Text style={[styles.title, { color: theme.colors.textColor, fontFamily: theme.fonts.textMedium }]}>{item.id}</Text>
+                <Text style={[styles.title, { color: theme.colors.textColor, fontFamily: theme.fonts.textMedium }]}>{t(item.id)}</Text>
               </View>
               {item.steps.map((step, index) => (
                 <Text key={Math.random()} style={[styles.steps, {
                   color: theme.colors.textColor,
                   fontFamily: theme.fonts.textRegular
-                }]}>{step}</Text>
+                }]}>{t(step)}</Text>
               ))}
             </View>
           )}

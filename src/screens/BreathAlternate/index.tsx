@@ -9,10 +9,12 @@ import { themeStyles } from '../../global/styles/theme';
 import { useThemeControl } from '../../stores/themeSetColor';
 import { Carousel } from '../../components/Carousel';
 import { Steps } from './steps';
+import { useTranslation } from 'react-i18next';
 
 export function BreathAlternate() {
   const [count, setCount] = useState(0)
   const { theme } = useThemeControl();
+  const { t } = useTranslation();
   return (
     <ScreenComponent>
       <HeaderBreath icon='breath_6' title='breath_6' />
@@ -24,21 +26,21 @@ export function BreathAlternate() {
 
       <View style={styles.countCycles}>
         <Text style={[styles.textInfo, { color: theme.colors.textColor, fontFamily: theme.fonts.textRegular }]}>
-          Use o contador de ciclos para auxiliar!
+          {t('screen_alternate_11')}
         </Text>
-        <Text style={[styles.textInfo, { color: theme.colors.textColor, fontFamily: theme.fonts.textRegular }]}>Ciclos: <Text style={styles.bold}> {count}</Text> </Text>
+        <Text style={[styles.textInfo, { color: theme.colors.textColor, fontFamily: theme.fonts.textRegular }]}>{t('screen_alternate_12')}<Text style={styles.bold}> {count}</Text> </Text>
         <View style={styles.buttonsCount}>
           <TouchableOpacity style={styles.button} onPress={() => setCount(count + 1)}>
             <Text style={[styles.titleButton, {
               fontFamily: theme.fonts.textBold,
               color: themeStyles.light.colors.textColor
-            }]}>CONTAR</Text>
+            }]}>{t('screen_alternate_Start')}</Text>
           </TouchableOpacity>
           <TouchableOpacity style={[styles.button, { backgroundColor: "#B22222" }]} onPress={() => setCount(0)}>
             <Text style={[styles.titleButton, {
               fontFamily: theme.fonts.textBold,
               color: themeStyles.light.colors.textColor
-            }]}>ZERAR</Text>
+            }]}>{t('screen_alternate_Stop')}</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -50,12 +52,12 @@ export function BreathAlternate() {
             color: theme.colors.textColor,
             fontFamily: theme.fonts.textBold
           }]}>
-            Propósito: {''}
+            {t('info_alternate_1')} {''}
             <Text style={[styles.text, {
               color: theme.colors.textColor,
               fontFamily: theme.fonts.textRegular
             }]}>
-              Essa técnica é usada para equilibrar a energia e acalmar a mente.
+              {t('info_alternate_2')}
             </Text>
           </Text>
 
@@ -63,13 +65,12 @@ export function BreathAlternate() {
             color: theme.colors.textColor,
             fontFamily: theme.fonts.textBold
           }]}>
-            Como isso ajuda: {''}
+            {t('info_alternate_3')} {''}
             <Text style={[styles.text, {
               color: theme.colors.textColor,
               fontFamily: theme.fonts.textRegular
             }]}>
-              A respiração alternada de narinas pode ajudar a equilibrar os hemisférios cerebrais, promover o foco e aliviar a ansiedade.
-              Ela também é usada em práticas de ioga para acalmar a mente.
+              {t('info_alternate_4')}
             </Text>
           </Text>
 

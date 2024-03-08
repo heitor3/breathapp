@@ -1,26 +1,26 @@
 export const Steps = [
   {
-    id: "Passo 1",
+    id: "screen_alternate_1",
     steps: [
-      "Sente-se em uma posição confortável com a coluna reta.",
-      "Você pode estar em uma cadeira, no chão ou em uma postura de meditação, como a postura de lótus"
+      "screen_alternate_2",
+      "screen_alternate_3"
     ]
 
   },
   {
-    id: "Passo 2",
+    id: "screen_alternate_4",
     steps: [
-      "Feche uma narina com o polegar e inspire lentamente pela outra narina.",
-      "Feche a outra narina com o dedo indicador, segurando a respiração por alguns segundos.",
-      "Solte a primeira narina e expire por ela. Repita alternando as narinas.",
-      "Você pode praticar a Respiração Alternada de Narinas conforme necessário."
+      "screen_alternate_5",
+      "screen_alternate_6",
+      "Sscreen_alternate_7",
+      "screen_alternate_8"
     ]
 
   },
   {
-    id: "Passo 3",
+    id: "screen_alternate_9",
     steps: [
-      "Não há um número específico de vezes que você deve praticar, mas pode começar com 5 a 10 ciclos (um ciclo inclui uma inalação e uma exalação através de ambas as narinas) e, em seguida, ajustar conforme desejar."
+      "screen_alternate_10"
     ]
   }
 ]

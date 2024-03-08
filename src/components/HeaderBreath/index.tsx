@@ -5,6 +5,7 @@ import { styles } from './styles';
 import * as breath from '../../assets/IconBreath'
 import { useNavigation } from '@react-navigation/native';
 import { useThemeControl } from '../../stores/themeSetColor';
+import { useTranslation } from 'react-i18next';
 
 const BreathType = {
   "breath_1": breath.AnxietyIcon,
@@ -16,12 +17,12 @@ const BreathType = {
 };
 
 const BreathName = {
-  "breath_1": "Respiração consciente",
-  "breath_2": "Respiração 4-7-8",
-  "breath_3": "Respiração abdominal",
-  "breath_4": "Respiração quadrada",
-  "breath_5": "Respiração profunda completa",
-  "breath_6": "Respiração alternada de narinas",
+  "breath_1": "title_breath_1",
+  "breath_2": "title_breath_2",
+  "breath_3": "title_breath_3",
+  "breath_4": "title_breath_4",
+  "breath_5": "title_breath_5",
+  "breath_6": "title_breath_6"
 };
 
 type IconBreath = keyof typeof BreathType;
@@ -33,6 +34,7 @@ type HeaderBreathProps = {
 }
 
 export function HeaderBreath({ icon, title }: HeaderBreathProps) {
+  const { t } = useTranslation();
   const image = BreathType[icon]
   const text = BreathName[title]
   const { theme } = useThemeControl();
@@ -51,7 +53,7 @@ export function HeaderBreath({ icon, title }: HeaderBreathProps) {
       <Text style={[styles.title, {
         color: theme.colors.textColor,
         fontFamily: theme.fonts.textBold
-      }]}>{text}</Text>
+      }]}>{t(text)}</Text>
     </View>
   );
 }
