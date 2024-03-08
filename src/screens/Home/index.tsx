@@ -43,7 +43,7 @@ export function Home() {
 
   return (
     <ScreenComponent>
-      <View style={{ width: '100%', marginTop: -60, marginBottom: 50, display: 'flex', flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 30 }}>
+      <View style={{ width: '100%', marginTop: -50, marginBottom: 50, display: 'flex', flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 30 }}>
         <Dropdown options={flags} />
         <TouchableOpacity onPress={handleToggleTheme} style={{ borderRadius: 50, padding: 2 }}>
           {theme.bar === "dark" ? (<Image source={Sun} style={{ width: 26, height: 26 }} />) : (<Image source={Moon} style={{ width: 26, height: 26 }} />)}
@@ -67,13 +67,13 @@ export function Home() {
       <View style={styles.boxCollection}>
         <View style={styles.boxConente}>
           <ButtonIcon icon='breath_1' title={t("title_breath_1")} onPress={() => navigate('breathConscious')} />
-          <ButtonIcon icon='breath_2' title={t("title_breath_1")} onPress={() => navigate('breath478')} />
-          <ButtonIcon icon='breath_3' title={t("title_breath_1")} onPress={() => navigate('breathAbdominal')} />
+          <ButtonIcon icon='breath_2' title={t("title_breath_2")} onPress={() => navigate('breath478')} />
+          <ButtonIcon icon='breath_3' title={t("title_breath_3")} onPress={() => navigate('breathAbdominal')} />
         </View>
         <View style={styles.boxConente}>
-          <ButtonIcon icon='breath_4' title={t("title_breath_1")} onPress={() => navigate('breathSquare')} />
-          <ButtonIcon icon='breath_5' title={t("title_breath_1")} onPress={() => navigate('breathDeep')} />
-          <ButtonIcon icon='breath_6' title={t("title_breath_1")} onPress={() => navigate('breathAlternate')} />
+          <ButtonIcon icon='breath_4' title={t("title_breath_4")} onPress={() => navigate('breathSquare')} />
+          <ButtonIcon icon='breath_5' title={t("title_breath_5")} onPress={() => navigate('breathDeep')} />
+          <ButtonIcon icon='breath_6' title={t("title_breath_6")} onPress={() => navigate('breathAlternate')} />
         </View>
       </View>
 

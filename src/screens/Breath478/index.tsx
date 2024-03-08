@@ -22,13 +22,13 @@ export function Breath478() {
     let intervalId: NodeJS.Timeout;
 
     if (stage === 1) {
-      setBreathe("Inspire por 4 segundos");
+      setBreathe("screen_487_6");
       setColor("#00FF7F")
     } else if (stage === 2) {
-      setBreathe("Prenda por 7 segundos");
+      setBreathe("screen_487_7");
       setColor("#B22222")
     } else {
-      setBreathe("Expire por 8 segundos");
+      setBreathe("screen_487_8");
       setColor("#00FF7F")
     }
 
@@ -84,7 +84,7 @@ export function Breath478() {
         }]}>{t('screen_487_4')}</Text>
       </View>
 
-      <Text style={[styles.label, { color: theme.colors.textColor, }]}>{timerStart ? breathe : `${t('screen_487_5')}`}</Text>
+      <Text style={[styles.label, { color: theme.colors.textColor, }]}>{timerStart ? `${t(breathe)}` : `${t('screen_487_5')}`}</Text>
       <View style={styles.boxStopWatch}>
         <Text style={[styles.watch, { color: theme.colors.textColor }]}>{timerStart ? seconds : "0"}</Text>
         <View style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'absolute' }}>

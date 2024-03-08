@@ -22,16 +22,16 @@ export function BreathSquare() {
     let intervalId: NodeJS.Timeout;
 
     if (stage === 1) {
-      setBreathe("Inspire por 4 segundos");
+      setBreathe("screen_square_6");
       setColor("#00FF7F")
     } else if (stage === 2) {
-      setBreathe("Prenda por 4 segundos");
+      setBreathe("screen_square_7");
       setColor("#B22222")
     } else if (stage === 3) {
-      setBreathe("Expire por 4 segundos");
+      setBreathe("screen_square_8");
       setColor("#00FF7F")
     } else {
-      setBreathe("Prenda por 4 segundos");
+      setBreathe("screen_square_9");
       setColor("#B22222")
     }
 
@@ -89,7 +89,7 @@ export function BreathSquare() {
         }]}>{t('screen_square_4')}</Text>
       </View>
 
-      <Text style={[styles.label, { fontFamily: theme.fonts.textRegular, color: theme.colors.textColor }]}>{timerStart ? breathe : `${t('screen_square_5')}`}</Text>
+      <Text style={[styles.label, { fontFamily: theme.fonts.textRegular, color: theme.colors.textColor }]}>{timerStart ? `${t(breathe)}` : `${t('screen_square_5')}`}</Text>
       <View style={[styles.boxStopWatch, { borderColor: color }]}>
         <Text style={[styles.watch, { color: theme.colors.textColor, fontFamily: theme.fonts.textBold }]}>{timerStart ? seconds : "0"}</Text>
         <View style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'absolute' }}>

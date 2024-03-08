@@ -4,7 +4,6 @@ import Translate from '../../assets/translate.png';
 import { styles } from './styles';
 import useTranslateControl from '../../stores/translateControl';
 import { useTranslation } from 'react-i18next';
-import { ModalProps } from 'react-native-modal';
 
 type DropOptions = {
   flag: ImageSourcePropType;
