@@ -30,7 +30,7 @@ export function BreathAbdominal() {
         <Text style={[styles.textInfo, {
           color: theme.colors.textColor,
           fontFamily: theme.fonts.textRegular
-        }]}>{t('screen_abdominal_14')}</Text>
+        }]}>{t('screen_abdominal_4')}</Text>
         <Text style={[styles.textInfo, {
           color: theme.colors.textColor,
           fontFamily: theme.fonts.textRegular
