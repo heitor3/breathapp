@@ -91,7 +91,7 @@ export function BreathSquare() {
 
       <Text style={[styles.label, { fontFamily: theme.fonts.textRegular, color: theme.colors.textColor }]}>{timerStart ? `${t(breathe)}` : `${t('screen_square_5')}`}</Text>
       <View style={[styles.boxStopWatch, { borderColor: color }]}>
-        <Text style={[styles.watch, { color: theme.colors.textColor, fontFamily: theme.fonts.textBold }]}>{timerStart ? seconds : "0"}</Text>
+        <Text style={[styles.watch, { color: theme.colors.textColor }]}>{timerStart ? seconds : "0"}</Text>
         <View style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'absolute' }}>
           <TimerCircleAnimated color={color} colorTop={theme.colors.primaryColor} spinInit={timerStart} />
         </View>

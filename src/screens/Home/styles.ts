@@ -1,24 +1,28 @@
-import { StyleSheet } from 'react-native';
+import { Dimensions, StyleSheet } from 'react-native';
+
+const { height } = Dimensions.get('screen')
+
+const value = height < 800 ? 120 : 200
 
 export const styles = StyleSheet.create({
   header: {
     width: '100%',
     height: 80,
-    paddingHorizontal: 30
+    paddingHorizontal: 30,
   },
   welcome: {
     fontWeight: '600',
-    fontSize: 32,
+    fontSize: 28,
   },
   text: {
-    marginTop: 40,
+    marginTop: 30,
     textAlign: 'justify',
     lineHeight: 20,
   },
   boxCollection: {
-    marginTop: 100,
+    marginTop: value,
     width: '100%',
-    height: 300,
+    gap: 60,
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-evenly',
@@ -28,11 +32,11 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     flexDirection: 'row',
     justifyContent: 'space-between',
-    height: 160
+    height: 90
   },
   footerInfo: {
     width: '100%',
-    paddingHorizontal: 30,
+    paddingHorizontal: 20,
     marginTop: -20,
     textAlign: 'justify'
   }

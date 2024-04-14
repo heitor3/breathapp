@@ -1,10 +1,14 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
 import { themeStyles } from '../../global/styles/theme';
+
+const { height, width } = Dimensions.get('screen');
 
 export const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    paddingTop: 100,
+    height,
+    width,
+    paddingTop: 40,
+    paddingBottom: 20,
     paddingHorizontal: 10,
     alignItems: 'center',
     justifyContent: 'center'
@@ -16,6 +20,6 @@ export const styles = StyleSheet.create({
   },
   buttonModal: {
     alignItems: 'center',
-    height: 80,
+    height: 50,
   }
 })

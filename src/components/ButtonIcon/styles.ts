@@ -1,5 +1,4 @@
 import { StyleSheet } from 'react-native';
-import { themeStyles } from '../../global/styles/theme';
 
 export const styles = StyleSheet.create({
   container: {
@@ -7,7 +6,7 @@ export const styles = StyleSheet.create({
     width: '33.33%',
     padding: 10,
     alignItems: 'center',
-    height: 150,
+    height: 240,
   },
   icon: {
     width: 64,

@@ -1,10 +1,13 @@
-import { StyleSheet } from 'react-native';
-import { themeStyles } from '../../global/styles/theme';
+import { Dimensions, StyleSheet } from 'react-native';
+
+const { height } = Dimensions.get('screen')
+
+const value = height < 800 ? 10 : 60
 
 export const styles = StyleSheet.create({
   container: {
     width: '90%',
-    marginTop: 50,
+    marginTop: value,
     paddingHorizontal: 10,
     display: 'flex',
     alignItems: 'center'

@@ -2,10 +2,14 @@ import { Dimensions, StyleSheet } from "react-native";
 
 
 const width = Dimensions.get('screen').width
+
+const { height } = Dimensions.get('screen')
+
+const value = height < 800 ? 180 : 260
+
 export const styles = StyleSheet.create({
   container: {
-    minHeight: 250,
-    maxHeight: 340
+    height: value
   },
   header: {
     width: '100%',

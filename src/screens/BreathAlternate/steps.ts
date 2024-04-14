@@ -12,7 +12,7 @@ export const Steps = [
     steps: [
       "screen_alternate_5",
       "screen_alternate_6",
-      "Sscreen_alternate_7",
+      "screen_alternate_7",
       "screen_alternate_8"
     ]
 

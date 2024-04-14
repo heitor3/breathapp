@@ -1,24 +1,28 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
+
+const { height } = Dimensions.get('screen')
+
+const value = height < 800 ? 140 : 260
 
 export const styles = StyleSheet.create({
   contentInfo: {
     width: '100%',
     paddingHorizontal: 26,
-    marginTop: 50
+    marginTop: 20
   },
   text: {
-    lineHeight: 30,
+    lineHeight: 26,
     fontSize: 14,
   },
   boxStopWatch: {
     display: 'flex',
     width: '90%',
-    height: 200,
+    height: value,
     alignItems: 'center',
     justifyContent: 'center'
   },
   label: {
-    marginTop: 30,
+    marginTop: 20,
   },
   watch: {
     fontSize: 72,

@@ -3,10 +3,8 @@ import { themeStyles } from '../../global/styles/theme'
 export const styles = StyleSheet.create({
   header: {
     width: '100%',
-    height: 60,
     display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: 'center'
   },
   back: {
     width: '100%',
