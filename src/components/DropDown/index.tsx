@@ -34,7 +34,7 @@ export default function Dropdown({ options }: DropdownProps) {
 
   return (
     <View style={styles.container}>
-      <TouchableOpacity style={styles.dropdownHeader} onPress={() => setDropdownOpen(!dropdownOpen)}>
+      <TouchableOpacity style={styles.dropdownHeader} onPress={() => setDropdownOpen(!dropdownOpen)} accessibilityLabel='Select Translate Button'>
         <View style={styles.selectedOptionContainer}>
           <Image source={Translate} style={styles.transleteIcon} />
         </View>
@@ -44,7 +44,7 @@ export default function Dropdown({ options }: DropdownProps) {
         dropdownOpen && (
           <View style={styles.dropdownList}>
             {options.map((option) => (
-              <TouchableOpacity key={option.value} style={styles.option} onPress={() => selectOption(option.value)}>
+              <TouchableOpacity key={option.value} style={styles.option} onPress={() => selectOption(option.value)} accessibilityLabel='Select Translate Button'>
                 <Image source={option.flag} style={styles.image} />
               </TouchableOpacity>
             ))}

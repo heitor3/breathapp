@@ -25,7 +25,7 @@ export function ButtonIcon({ icon, title, ...rest }: ButtonIconProps) {
   const breathIcon = BreathType[icon]
   const { theme } = useThemeControl();
   return (
-    <View style={styles.container}>
+    <View style={styles.container} accessibilityLabel='Select Breath Button'>
       <TouchableOpacity {...rest} activeOpacity={0.5}>
         <Image source={breathIcon} style={[styles.icon, { borderColor: theme.colors.textColor }]} />
       </TouchableOpacity>

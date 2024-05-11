@@ -45,7 +45,7 @@ export function Home() {
     <ScreenComponent>
       <View style={{ width: '100%', marginBottom: 30, display: 'flex', flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 30 }}>
         <Dropdown options={flags} />
-        <TouchableOpacity onPress={handleToggleTheme} style={{ borderRadius: 50, padding: 2 }}>
+        <TouchableOpacity onPress={handleToggleTheme} style={{ borderRadius: 50, padding: 2 }} accessibilityLabel='Change app theme button'>
           {theme.bar === "dark" ? (<Image source={Sun} style={{ width: 26, height: 26 }} />) : (<Image source={Moon} style={{ width: 26, height: 26 }} />)}
         </TouchableOpacity>
       </View>
