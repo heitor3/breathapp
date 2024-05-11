@@ -21,6 +21,7 @@ export function ScreenComponent({ children, ...rest }: ScreenPorps) {
       <View style={[styles.buttonModal, { backgroundColor: theme.colors.primaryColor }]}>
         <TouchableOpacity
           style={{ borderRadius: 50, padding: 4 }}
+          accessibilityLabel='Icon open modal information'
           activeOpacity={0.5} onPress={() => setControlHomeModal(!controlHomeModal)}>
           <Image source={InfoIcon} style={{ width: 24, height: 24 }} />
         </TouchableOpacity>

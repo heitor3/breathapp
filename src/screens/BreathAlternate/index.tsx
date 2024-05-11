@@ -30,13 +30,13 @@ export function BreathAlternate() {
         </Text>
         <Text style={[styles.textInfo, { color: theme.colors.textColor, fontFamily: theme.fonts.textRegular }]}>{t('screen_alternate_12')}<Text style={styles.bold}> {count}</Text> </Text>
         <View style={styles.buttonsCount}>
-          <TouchableOpacity style={styles.button} onPress={() => setCount(count + 1)}>
+          <TouchableOpacity style={styles.button} onPress={() => setCount(count + 1)} accessibilityLabel='Start Button'>
             <Text style={[styles.titleButton, {
               fontFamily: theme.fonts.textBold,
               color: themeStyles.light.colors.textColor
             }]}>{t('screen_alternate_Start')}</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={[styles.button, { backgroundColor: "#B22222" }]} onPress={() => setCount(0)}>
+          <TouchableOpacity style={[styles.button, { backgroundColor: "#B22222" }]} onPress={() => setCount(0)} accessibilityLabel='Stop Button'>
             <Text style={[styles.titleButton, {
               fontFamily: theme.fonts.textBold,
               color: themeStyles.light.colors.textColor

@@ -93,10 +93,10 @@ export function Breath478() {
       </View>
 
       <View style={styles.containerButton}>
-        <TouchableOpacity style={styles.play} onPress={() => setTimerStart(true)}>
+        <TouchableOpacity style={styles.play} onPress={() => setTimerStart(true)} accessibilityLabel='Start Button'>
           <Text style={[styles.titleButton, { fontFamily: theme.fonts.textBold, color: themeStyles.light.colors.textColor }]}>{t('screen_487_Start')}</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={[styles.play, styles.stop]} onPress={() => setTimerStart(false)}>
+        <TouchableOpacity style={[styles.play, styles.stop]} onPress={() => setTimerStart(false)} accessibilityLabel='Stop Button'>
           <Text style={[styles.titleButton, { fontFamily: theme.fonts.textBold, color: themeStyles.light.colors.textColor }]}>{t('screen_487_Stop')}</Text>
         </TouchableOpacity>
       </View>
