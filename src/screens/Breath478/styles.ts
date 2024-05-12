@@ -1,17 +1,17 @@
-import { StyleSheet, Dimensions } from 'react-native';
+import {StyleSheet, Dimensions} from 'react-native';
 
-const { height } = Dimensions.get('screen')
+const {height} = Dimensions.get('screen');
 
-const value = height < 800 ? 140 : 260
+const value = height < 800 ? 140 : 260;
 
 export const styles = StyleSheet.create({
   contentInfo: {
     width: '100%',
-    paddingHorizontal: 26,
-    marginTop: 20
+    paddingHorizontal: 24,
+    marginTop: 20,
   },
   text: {
-    lineHeight: 26,
+    lineHeight: 24,
     fontSize: 14,
   },
   boxStopWatch: {
@@ -19,7 +19,7 @@ export const styles = StyleSheet.create({
     width: '90%',
     height: value,
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   label: {
     marginTop: 20,
@@ -34,10 +34,10 @@ export const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-evenly'
+    justifyContent: 'space-evenly',
   },
   play: {
-    backgroundColor: "#00FF7F",
+    backgroundColor: '#00FF7F',
     height: 40,
     width: 100,
     display: 'flex',
@@ -46,19 +46,19 @@ export const styles = StyleSheet.create({
     borderRadius: 10,
   },
   stop: {
-    backgroundColor: "#B22222"
+    backgroundColor: '#B22222',
   },
   title: {
     fontWeight: 'bold',
     lineHeight: 20,
-    fontSize: 16
+    fontSize: 16,
   },
   textModal: {
     lineHeight: 18,
     textAlign: 'justify',
-    marginTop: 20
+    marginTop: 20,
   },
   titleButton: {
     lineHeight: 22,
-  }
+  },
 });
