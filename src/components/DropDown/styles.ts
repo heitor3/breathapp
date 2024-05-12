@@ -1,14 +1,14 @@
-import { StyleSheet } from "react-native";
+import {StyleSheet} from 'react-native';
 
 export const styles = StyleSheet.create({
   container: {
     position: 'relative',
     zIndex: 1,
-    flexDirection: 'row'
+    flexDirection: 'row',
   },
   dropdownHeader: {
     borderRadius: 5,
-    marginRight: 2
+    marginRight: 2,
   },
   selectedOptionContainer: {
     flexDirection: 'row',
