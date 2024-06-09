@@ -15,7 +15,11 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
   },
   dropdownList: {
+    display: 'flex',
     flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-around',
+    width: '100%',
   },
   option: {
     padding: 5,

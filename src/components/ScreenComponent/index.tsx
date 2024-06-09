@@ -13,9 +13,14 @@ import {useThemeControl} from '../../stores/themeSetColor';
 
 type ScreenPorps = ViewProps & {
   children: ReactNode;
+  showInfoButton?: boolean;
 };
 
-export function ScreenComponent({children, ...rest}: ScreenPorps) {
+export function ScreenComponent({
+  children,
+  showInfoButton = true,
+  ...rest
+}: ScreenPorps) {
   const {theme} = useThemeControl();
   const {controlHomeModal, setControlHomeModal} = useModalHomeControl();
   return (
@@ -26,19 +31,21 @@ export function ScreenComponent({children, ...rest}: ScreenPorps) {
         style={[styles.children, {backgroundColor: theme.colors.primaryColor}]}>
         {children}
       </View>
-      <View
-        style={[
-          styles.buttonModal,
-          {backgroundColor: theme.colors.primaryColor},
-        ]}>
-        <TouchableOpacity
-          style={{borderRadius: 50, padding: 4}}
-          accessibilityLabel="Icon open modal information"
-          activeOpacity={0.5}
-          onPress={() => setControlHomeModal(!controlHomeModal)}>
-          <Image source={InfoIcon} style={{width: 24, height: 24}} />
-        </TouchableOpacity>
-      </View>
+      {showInfoButton && (
+        <View
+          style={[
+            styles.buttonModal,
+            {backgroundColor: theme.colors.primaryColor},
+          ]}>
+          <TouchableOpacity
+            style={{borderRadius: 50, padding: 4}}
+            accessibilityLabel="Icon open modal information"
+            activeOpacity={0.5}
+            onPress={() => setControlHomeModal(!controlHomeModal)}>
+            <Image source={InfoIcon} style={{width: 24, height: 24}} />
+          </TouchableOpacity>
+        </View>
+      )}
     </SafeAreaView>
   );
 }

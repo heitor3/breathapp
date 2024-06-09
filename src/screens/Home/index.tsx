@@ -30,19 +30,6 @@ export function Home() {
     }, []),
   );
 
-  const handleToggleTheme = async () => {
-    try {
-      const currentTheme = await AsyncStorage.getItem('theme');
-      toggleTheme(currentTheme === 'dark' ? 'light' : 'dark');
-      await AsyncStorage.setItem(
-        'theme',
-        currentTheme === 'dark' ? 'light' : 'dark',
-      );
-    } catch (error) {
-      console.error('Error toggling theme:', error);
-    }
-  };
-
   return (
     <ScreenComponent>
       <View
@@ -56,7 +43,7 @@ export function Home() {
         }}>
         <Dropdown options={flags} />
         <TouchableOpacity
-          onPress={handleToggleTheme}
+          // onPress={handleToggleTheme}
           style={{borderRadius: 50, padding: 2}}
           accessibilityLabel="Change app theme button">
           {theme.bar === 'dark' ? (
