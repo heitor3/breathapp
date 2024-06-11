@@ -2,11 +2,9 @@
 <br/>
 <br/>
 
-
 # BREATHAPP
 
 Hello, welcome, this is BREATHAPP, an app designed to help people manage anxiety through breathing techniques. It is important to note that this application does not replace professional guidance from a doctor or therapist. Always consult a healthcare professional for proper assessment and advice. ❤️
-
 
 ## Overview
 
@@ -38,11 +36,12 @@ npm start
 <br/>
 
 <div style="display: flex; justify-content: space-between;">
-   <img src="./public/breath.jpeg" alt="Breathing Guides" height="400" />
-   <img src="./public/counter.jpeg" alt="Counter" height="400" />
-   <img src="./public/timer.jpeg" alt="Timer" height="400" />
-   <img src="./public/light.jpeg" alt="Light" height="400" />
-   <img src="./public/dark.jpeg" alt="Dark" height="400" />
+   <img src="./public/light.jpeg" alt="Breathing Guides" height="400" />
+   <img src="./public/dark.jpeg" alt="Counter" height="400" />
+   <img src="./public/breath-presentation-1.jpeg" alt="Timer" height="400" />
+   <img src="./public/breath-presentation-2.jpeg" alt="Light" height="400" />
+   <img src="./public/settings.jpeg" alt="Dark" height="400" />
+   <img src="./public/info.jpeg" alt="Dark" height="400" />
 </div>
 
 ## Contributing
@@ -51,13 +50,10 @@ npm start
 - Create a new branch: `git checkout -b feature/new-functionality`.
 - Make your changes and submit a pull request.
 
-
-
 ### Notice
+
 BREATHAPP does not replace professional medical consultation. Always consult a healthcare professional for personalized guidance.
 
-
-
 ## License
-_This project is licensed under the MIT License._
 
+_This project is licensed under the MIT License._
