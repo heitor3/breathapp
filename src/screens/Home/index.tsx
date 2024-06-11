@@ -5,21 +5,16 @@ import {styles} from './styles';
 import {ButtonIcon} from '../../components/ButtonIcon';
 import {ModalInfo} from '../../components/ModalInfo/ModalInfo';
 import {ScreenComponent} from '../../components/ScreenComponent';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import {useThemeControl} from '../../stores/themeSetColor';
-import Moon from '../../assets/moon.png';
-import Sun from '../../assets/sun.png';
 import '../../utils/i18n';
 import {useTranslation} from 'react-i18next';
-import {flags} from '../../assets/flags';
-import Dropdown from '../../components/DropDown';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 export function Home() {
   const {t} = useTranslation();
   const {navigate} = useNavigation();
-  const {theme, toggleTheme} = useThemeControl();
+  const {theme} = useThemeControl();
   const [homeFocus, setHomeFocus] = useState(false);
-  const [teste, setTeste] = useState(false);
 
   useFocusEffect(
     useCallback(() => {
@@ -30,40 +25,26 @@ export function Home() {
     }, []),
   );
 
-  const handleToggleTheme = async () => {
-    try {
-      const currentTheme = await AsyncStorage.getItem('theme');
-      toggleTheme(currentTheme === 'dark' ? 'light' : 'dark');
-      await AsyncStorage.setItem(
-        'theme',
-        currentTheme === 'dark' ? 'light' : 'dark',
-      );
-    } catch (error) {
-      console.error('Error toggling theme:', error);
-    }
-  };
-
   return (
     <ScreenComponent>
       <View
         style={{
           width: '100%',
-          marginBottom: 30,
+          marginBottom: 20,
           display: 'flex',
           flexDirection: 'row',
-          justifyContent: 'space-between',
+          justifyContent: 'flex-end',
           paddingHorizontal: 30,
         }}>
-        <Dropdown options={flags} />
         <TouchableOpacity
-          onPress={handleToggleTheme}
-          style={{borderRadius: 50, padding: 2}}
-          accessibilityLabel="Change app theme button">
-          {theme.bar === 'dark' ? (
-            <Image source={Sun} style={{width: 26, height: 26}} />
-          ) : (
-            <Image source={Moon} style={{width: 26, height: 26}} />
-          )}
+          onPress={() => navigate('settings')}
+          style={{borderRadius: 50, padding: 4}}
+          accessibilityLabel="options settings button">
+          <Icon
+            name="settings-sharp"
+            color={theme.colors.textColor}
+            size={22}
+          />
         </TouchableOpacity>
       </View>
       <View

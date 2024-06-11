@@ -27,30 +27,30 @@ export interface ThemeStyles {
 const themeStyles: ThemeStyles = {
   light: {
     colors: {
-      primaryColor: "#e8e7e9ff",
-      textColor: "#000000",
-      statusBarColor: "dark"
+      primaryColor: '#e8e7e9ff',
+      textColor: '#000000',
+      statusBarColor: 'dark',
     },
     fonts: {
-      textRegular: "Roboto-Regular",
-      textMedium: "Roboto-Medium",
-      textBold: "Roboto-Bold"
+      textRegular: 'Roboto-Regular',
+      textMedium: 'Roboto-Medium',
+      textBold: 'Roboto-Bold',
     },
-    bar: "light"
+    bar: 'light',
   },
   dark: {
     colors: {
-      primaryColor: "#111111",
-      textColor: "#FFFFFF",
-      statusBarColor: "light"
+      primaryColor: '#0f0f0fff',
+      textColor: '#FFFFFF',
+      statusBarColor: 'light',
     },
     fonts: {
-      textRegular: "Roboto-Regular",
-      textMedium: "Roboto-Medium",
-      textBold: "Roboto-Bold"
+      textRegular: 'Roboto-Regular',
+      textMedium: 'Roboto-Medium',
+      textBold: 'Roboto-Bold',
     },
-    bar: "dark"
+    bar: 'dark',
   },
 };
 
-export { themeStyles };
+export {themeStyles};
