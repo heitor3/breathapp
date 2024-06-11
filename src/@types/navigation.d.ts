@@ -8,6 +8,7 @@ export declare global {
       breathSquare: undefined;
       breathDeep: undefined;
       breathAlternate: undefined;
+      settings: undefined;
     }
   }
 }

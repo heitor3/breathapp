@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {ScrollView, Text, TouchableOpacity, View} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
@@ -10,13 +10,19 @@ import {RadioButton} from 'react-native-paper';
 import Dropdown from '../../components/DropDown';
 import {flags} from '../../assets/flags';
 import {useTranslation} from 'react-i18next';
+import {useNavigation} from '@react-navigation/native';
 
 export function Settings() {
   const {theme, toggleTheme} = useThemeControl();
   const [openThemeOption, setOpenThemeOption] = useState(false);
   const [openLanguage, setOpenLanguage] = useState(false);
   const [optionTheme, setOptionTheme] = useState<'light' | 'dark'>('light');
+  const {navigate} = useNavigation();
   const {t} = useTranslation();
+
+  useEffect(() => {
+    theme.bar === 'dark' ? setOptionTheme('dark') : '';
+  }, []);
 
   function Separator() {
     return (
@@ -55,12 +61,15 @@ export function Settings() {
   return (
     <ScreenComponent showInfoButton={false}>
       <View style={styles.headerContainer}>
+        <TouchableOpacity style={styles.back} onPress={() => navigate('home')}>
+          <Icon name="chevron-left" color={theme.colors.textColor} size={22} />
+        </TouchableOpacity>
         <Text
           style={[
             styles.headerTitle,
             {color: theme.colors.textColor, fontFamily: theme.fonts.textBold},
           ]}>
-          Settings
+          {t('settings_1')}
         </Text>
       </View>
       <ScrollView style={styles.container}>
@@ -68,7 +77,7 @@ export function Settings() {
           activeOpacity={0.7}
           style={styles.actionButton}
           onPress={() => setOpenThemeOption(!openThemeOption)}>
-          <Text style={{color: theme.colors.textColor}}>Theme</Text>
+          <Text style={{color: theme.colors.textColor}}>{t('settings_2')}</Text>
           {!openThemeOption ? (
             <Icon
               name="chevron-right"
@@ -92,7 +101,9 @@ export function Settings() {
                 value="light"
                 color={theme.colors.textColor}
               />
-              <Text style={{color: theme.colors.textColor}}>Light</Text>
+              <Text style={{color: theme.colors.textColor}}>
+                {t('settings_3')}
+              </Text>
               <Icon name="sun" size={14} color={theme.colors.textColor} solid />
             </View>
             <View style={styles.radioButtonContainer}>
@@ -102,7 +113,9 @@ export function Settings() {
                 value="light"
                 color={theme.colors.textColor}
               />
-              <Text style={{color: theme.colors.textColor}}>Dark</Text>
+              <Text style={{color: theme.colors.textColor}}>
+                {t('settings_4')}
+              </Text>
               <Icon
                 name="moon"
                 size={14}
@@ -117,7 +130,7 @@ export function Settings() {
           activeOpacity={0.7}
           style={styles.actionButton}
           onPress={() => setOpenLanguage(!openLanguage)}>
-          <Text style={{color: theme.colors.textColor}}>Language</Text>
+          <Text style={{color: theme.colors.textColor}}>{t('settings_5')}</Text>
           {!openLanguage ? (
             <Icon
               name="chevron-right"
@@ -132,7 +145,11 @@ export function Settings() {
             />
           )}
         </TouchableOpacity>
-        {openLanguage && <Dropdown options={flags} />}
+        {openLanguage && (
+          <View style={styles.flags}>
+            <Dropdown options={flags} />
+          </View>
+        )}
         <Separator />
       </ScrollView>
     </ScreenComponent>

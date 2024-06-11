@@ -1,6 +1,14 @@
 import {StyleSheet} from 'react-native';
 
 export const styles = StyleSheet.create({
+  back: {
+    width: '100%',
+    display: 'flex',
+    alignItems: 'center',
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    paddingHorizontal: 20,
+  },
   headerContainer: {
     width: '100%',
     display: 'flex',
@@ -12,7 +20,7 @@ export const styles = StyleSheet.create({
     marginTop: 60,
   },
   headerTitle: {
-    marginTop: 30,
+    marginTop: 20,
     fontSize: 22,
     height: 60,
   },
@@ -38,5 +46,8 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     gap: 6,
+  },
+  flags: {
+    marginBottom: 10,
   },
 });

@@ -9,7 +9,6 @@ import {Platform} from 'react-native';
 import useTranslateControl from './src/stores/translateControl';
 import {useTranslation} from 'react-i18next';
 import './src/utils/i18n';
-import {Settings} from './src/screens/Settings';
 
 const getStatusBarStyle = (barStyle: ThemeStyle['bar']): 'light' | 'dark' => {
   return barStyle === 'dark' ? 'light' : 'dark';
@@ -64,8 +63,7 @@ export default function App() {
   return (
     <>
       <StatusBar style={barStyle} translucent />
-      <Settings />
-      {/* <Routes /> */}
+      <Routes />
     </>
   );
 }
